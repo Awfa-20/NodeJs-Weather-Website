@@ -7,6 +7,8 @@ const forecast = require('./utils/forecast')
 
 const app = express() 
 
+const port = process.env.PORT || 3000
+
 // defined path for Express config
 const publicDirectoryPath= path.join(__dirname, '../public')
 const viewsPath= path.join(__dirname, '../templetes/views')
@@ -107,6 +109,6 @@ app.get('*', (req, res)=>{
     })
 })
 
-app.listen(3000, ()=>{
+app.listen(port, ()=>{
     console.log('Using Express Server On port 3000.')
 })
